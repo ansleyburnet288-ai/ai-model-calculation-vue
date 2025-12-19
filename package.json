@@ -1,0 +1,33 @@
+{
+  "name": "vue-cost-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "generate-favicon": "node scripts/generate-favicon.js"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "lodash": "^4.17.21",
+    "vue": "^2.6.14",
+    "vue-router": "^3.6.5",
+    "vuex": "^3.6.2",
+    "vuex-persistedstate": "^4.1.0"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "~5.0.0",
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "sass": "^1.86.2",
+    "sass-loader": "^16.0.5",
+    "tailwindcss": "^3.4.18",
+    "tailwindcss-animation-advanced": "^2.1.0",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
