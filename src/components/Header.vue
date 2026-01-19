@@ -479,8 +479,15 @@
   font-size: 0.9rem;
   font-weight: 500;
   border-radius: 6px;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
   box-shadow: 0 2px 8px rgba(147, 51, 234, 0.3);
+
+  -webkit-font-smoothing: antialiased;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
 
   &:hover {
     transform: translateY(-1px);
@@ -524,23 +531,20 @@
 /* Mobile Menu */
 .mobile-menu-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
-  height: 100dvh; /* Dynamic viewport height for mobile browsers */
+  inset: 0;
+  height: 100dvh;
   z-index: 99999;
   display: flex !important;
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #9333EA 100%);
   overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   /* Support for safe areas on notched devices */
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
-  box-sizing: border-box;
 }
 
 .mobile-menu-panel {
@@ -552,6 +556,9 @@
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+  max-width: 100%;
+  max-height: 100%;
   /* Support for safe areas on notched devices */
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
@@ -642,7 +649,7 @@
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   border-left: 4px solid transparent;
   min-height: 60px;
   width: 100%;
@@ -651,6 +658,12 @@
   -webkit-tap-highlight-color: transparent;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
 
   &:hover {
     color: white;
@@ -676,6 +689,14 @@
     color: white;
     align-self: center;
 
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+    -webkit-font-smoothing: antialiased;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform;
+
     &:hover {
       transform: translateY(-1px);
       box-shadow: 0 4px 12px rgba(147, 51, 234, 0.4);
@@ -687,6 +708,11 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
 }
 
 .mobile-nav-divider {
@@ -763,7 +789,8 @@
 body.menu-open {
   overflow: hidden;
   position: fixed;
-  width: 100%;
+  inset: 0;
+  height: 100dvh;
 }
 
 /* Responsive */
