@@ -316,6 +316,11 @@
   text-decoration: none;
   color: white;
   transition: opacity 0.2s;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: opacity, transform;
 
   &:hover {
     opacity: 0.9;
