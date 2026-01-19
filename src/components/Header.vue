@@ -479,8 +479,15 @@
   font-size: 0.9rem;
   font-weight: 500;
   border-radius: 6px;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
   box-shadow: 0 2px 8px rgba(147, 51, 234, 0.3);
+
+  -webkit-font-smoothing: antialiased;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
 
   &:hover {
     transform: translateY(-1px);
@@ -642,7 +649,7 @@
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   border-left: 4px solid transparent;
   min-height: 60px;
   width: 100%;
@@ -651,6 +658,12 @@
   -webkit-tap-highlight-color: transparent;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
 
   &:hover {
     color: white;
@@ -676,6 +689,14 @@
     color: white;
     align-self: center;
 
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+    -webkit-font-smoothing: antialiased;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform;
+
     &:hover {
       transform: translateY(-1px);
       box-shadow: 0 4px 12px rgba(147, 51, 234, 0.4);
@@ -687,6 +708,11 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
 }
 
 .mobile-nav-divider {
