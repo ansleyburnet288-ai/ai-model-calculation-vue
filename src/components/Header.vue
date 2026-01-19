@@ -531,23 +531,20 @@
 /* Mobile Menu */
 .mobile-menu-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
-  height: 100dvh; /* Dynamic viewport height for mobile browsers */
+  inset: 0;
+  height: 100dvh;
   z-index: 99999;
   display: flex !important;
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #9333EA 100%);
   overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   /* Support for safe areas on notched devices */
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
-  box-sizing: border-box;
 }
 
 .mobile-menu-panel {
@@ -559,6 +556,9 @@
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+  max-width: 100%;
+  max-height: 100%;
   /* Support for safe areas on notched devices */
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
@@ -789,7 +789,8 @@
 body.menu-open {
   overflow: hidden;
   position: fixed;
-  width: 100%;
+  inset: 0;
+  height: 100dvh;
 }
 
 /* Responsive */
